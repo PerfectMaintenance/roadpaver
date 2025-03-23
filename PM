@@ -1,0 +1,61 @@
+echo "# roadpaver" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:PerfectMaintenance/roadpaver.git
+git push -u origin main
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, Calendar } from "lucide-react";
+
+export default function PerfectMaintenance() {
+  return (
+    <div className="min-h-screen bg-black text-yellow-400 p-6 space-y-10">
+      <header className="text-center">
+        <h1 className="text-4xl font-extrabold tracking-wide">Perfect Maintenance</h1>
+        <p className="text-lg mt-2">Sealcoating & Striping Services in Chicagoland</p>
+      </header>
+
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: "Sealcoating", desc: "Protect and extend the life of your asphalt." },
+          { title: "Striping", desc: "Clean, precise lines for lots and roads." },
+          { title: "Crack Filling", desc: "Prevent further damage with durable crack filling." },
+          { title: "Pothole Patching", desc: "Fast, effective repairs for safer surfaces." },
+        ].map((service) => (
+          <Card key={service.title} className="bg-yellow-400 text-black">
+            <CardContent className="p-4">
+              <h2 className="text-xl font-bold mb-2">{service.title}</h2>
+              <p>{service.desc}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </section>
+
+      <section className="text-center space-y-4">
+        <h2 className="text-2xl font-bold">Serving the Entire Chicagoland Area</h2>
+        <p>Reliable, professional pavement maintenance you can count on.</p>
+      </section>
+
+      <section className="text-center space-y-6">
+        <h2 className="text-2xl font-bold">Get in Touch</h2>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Button variant="outline" className="border-yellow-400 text-yellow-400">
+            <Phone className="mr-2" /> Call Us
+          </Button>
+          <Button variant="outline" className="border-yellow-400 text-yellow-400">
+            <Mail className="mr-2" /> Email Us
+          </Button>
+          <Button variant="outline" className="border-yellow-400 text-yellow-400">
+            <Calendar className="mr-2" /> Book Online
+          </Button>
+        </div>
+      </section>
+
+      <footer className="text-center text-sm pt-10 border-t border-yellow-400">
+        <p>© {new Date().getFullYear()} Perfect Maintenance. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
