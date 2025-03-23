@@ -1,3 +1,13 @@
+echo "# roadpaver" >> README.md
+ git init
+ git add README.md
+ git commit -m "first commit"
+ git branch -M main
+ git remote add origin git@github.com:PerfectMaintenance/roadpaver.git
+ git push -u origin main
+ import { Card, CardContent } from "@/components/ui/card";
+ import { Button } from "@/components/ui/button";
+ import { Phone, Mail, Calendar } from "lucide-react";
 export default function PerfectMaintenance() {
   return (
     <div className="min-h-screen bg-black text-yellow-400 p-6 space-y-10">
